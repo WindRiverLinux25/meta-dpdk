@@ -34,7 +34,7 @@ PACKAGECONFIG ??= " "
 PACKAGECONFIG[afxdp] = ",,libbpf xdp-tools"
 PACKAGECONFIG[libvirt] = ",,libvirt"
 
-RDEPENDS:${PN} += "pciutils python3-core"
+RDEPENDS:${PN} += "bash pciutils python3-core"
 RDEPENDS:${PN}-examples += "bash"
 DEPENDS = "numactl python3-pyelftools-native"
 
