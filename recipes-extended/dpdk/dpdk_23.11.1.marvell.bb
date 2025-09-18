@@ -8,6 +8,7 @@ SRC_URI += " file://0001-config-meson-get-cpu_instruction_set-from-meson-opti.pa
              file://0001-Add-new-tracepoint-function-for-type-time_t.patch \
              file://0001-meson.build-march-and-mcpu-already-passed-by-Yocto.patch \
              file://0001-drivers-net-octeontx-fix-build-issue.patch \
+             file://0001-marvell-ci-update-Python-shebangs-to-python3.patch \
 "
 
 STABLE = "-stable"

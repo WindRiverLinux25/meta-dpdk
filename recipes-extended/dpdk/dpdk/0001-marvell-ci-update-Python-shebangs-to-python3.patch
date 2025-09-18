@@ -1,0 +1,62 @@
+From 46a1e5bce26ccc2819055ecd29e5895208ec14a0 Mon Sep 17 00:00:00 2001
+From: Ruiqiang Hao <Ruiqiang.Hao@windriver.com>
+Date: Thu, 18 Sep 2025 06:26:13 +0000
+Subject: [PATCH] marvell-ci: update Python shebangs to python3
+
+Replaced legacy `#!/usr/bin/python` with `#!/usr/bin/python3` in Marvell CI
+test scripts to ensure compatibility with environments where Python 2 is
+not available.
+
+Upstream-Status: Inappropriate
+
+Signed-off-by: Ruiqiang Hao <Ruiqiang.Hao@windriver.com>
+---
+ marvell-ci/test/cnxk-tests/common/scapy/createpcap.py     | 2 +-
+ marvell-ci/test/cnxk-tests/common/scapy/sendrecv.py       | 2 +-
+ marvell-ci/test/cnxk-tests/port_representor/sndrcv_pkt.py | 2 +-
+ marvell-ci/test/cnxk-tests/ptp_test/ptp_sendrecv.py       | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/marvell-ci/test/cnxk-tests/common/scapy/createpcap.py b/marvell-ci/test/cnxk-tests/common/scapy/createpcap.py
+index cad1719..38e933b 100755
+--- a/marvell-ci/test/cnxk-tests/common/scapy/createpcap.py
++++ b/marvell-ci/test/cnxk-tests/common/scapy/createpcap.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ # SPDX-License-Identifier: BSD-3-Clause
+ # Copyright(C) 2021 Marvell.
+ 
+diff --git a/marvell-ci/test/cnxk-tests/common/scapy/sendrecv.py b/marvell-ci/test/cnxk-tests/common/scapy/sendrecv.py
+index 9edd2b0..9e36100 100755
+--- a/marvell-ci/test/cnxk-tests/common/scapy/sendrecv.py
++++ b/marvell-ci/test/cnxk-tests/common/scapy/sendrecv.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ # SPDX-License-Identifier: BSD-3-Clause
+ # Copyright(C) 2021 Marvell.
+ 
+diff --git a/marvell-ci/test/cnxk-tests/port_representor/sndrcv_pkt.py b/marvell-ci/test/cnxk-tests/port_representor/sndrcv_pkt.py
+index fd0470d..87bdae6 100755
+--- a/marvell-ci/test/cnxk-tests/port_representor/sndrcv_pkt.py
++++ b/marvell-ci/test/cnxk-tests/port_representor/sndrcv_pkt.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ # SPDX-License-Identifier: BSD-3-Clause
+ # Copyright(C) 2024 Marvell.
+ 
+diff --git a/marvell-ci/test/cnxk-tests/ptp_test/ptp_sendrecv.py b/marvell-ci/test/cnxk-tests/ptp_test/ptp_sendrecv.py
+index 79170fc..614b78d 100755
+--- a/marvell-ci/test/cnxk-tests/ptp_test/ptp_sendrecv.py
++++ b/marvell-ci/test/cnxk-tests/ptp_test/ptp_sendrecv.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ # SPDX-License-Identifier: BSD-3-Clause
+ # Copyright(C) 2022 Marvell.
+ 
+-- 
+2.44.3
+
