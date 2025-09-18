@@ -1,0 +1,37 @@
+From 28de87364a26569c387e3a9fe3c03718c0c01266 Mon Sep 17 00:00:00 2001
+From: Ruiqiang Hao <Ruiqiang.Hao@windriver.com>
+Date: Thu, 11 Sep 2025 13:16:03 +0000
+Subject: [PATCH] drivers/net/octeontx: fix build failure due to unsupported `retaa`
+
+The OcteonTX driver build fails on some toolchains with errors like:
+
+  {standard input}:1347: Error: selected processor does not support `retaa'
+
+This happens because the `.cpu` option defaults to `generic+lse+sve`,
+which does not enable `retaa`. Update it to `neoverse-n2+crypto+sve`
+to ensure proper instruction support.
+
+Upstream-Status: Inappropriate
+
+Signed-off-by: Ruiqiang Hao <Ruiqiang.Hao@windriver.com>
+---
+ drivers/net/octeontx/base/octeontx_io.h | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/drivers/net/octeontx/base/octeontx_io.h b/drivers/net/octeontx/base/octeontx_io.h
+index d0b9cfbc67..56743f7cd0 100644
+--- a/drivers/net/octeontx/base/octeontx_io.h
++++ b/drivers/net/octeontx/base/octeontx_io.h
+@@ -53,7 +53,8 @@ do {							\
+ 
+ #if defined(RTE_ARCH_ARM64)
+ #if defined(__ARM_FEATURE_SVE)
+-#define __LSE_PREAMBLE " .cpu	generic+lse+sve\n"
++#define __LSE_PREAMBLE " .cpu	neoverse-n2+crypto+sve\n"
++
+ #else
+ #define __LSE_PREAMBLE " .cpu	generic+lse\n"
+ #endif
+-- 
+2.44.3
+
